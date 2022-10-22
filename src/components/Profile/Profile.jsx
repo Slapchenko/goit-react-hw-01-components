@@ -14,15 +14,21 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
       <ul className={css.stats}>
         <li className={css.list}>
           <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{stats.followers}</span>
+          <span className={css.quantity}>
+            {new Intl.NumberFormat('en-En').format(stats.followers)}
+          </span>
         </li>
         <li className={css.list}>
           <span className={css.label}>Views</span>
-          <span className={css.quantity}>{stats.views}</span>
+          <span className={css.quantity}>
+            {new Intl.NumberFormat('en-En').format(stats.views)}
+          </span>
         </li>
         <li className={css.list}>
           <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{stats.likes}</span>
+          <span className={css.quantity}>
+            {new Intl.NumberFormat('en-En').format(stats.likes)}
+          </span>
         </li>
       </ul>
     </div>
@@ -34,5 +40,9 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
