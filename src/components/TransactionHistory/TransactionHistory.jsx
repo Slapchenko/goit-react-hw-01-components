@@ -16,7 +16,7 @@ export const TransactionHistory = ({ items }) => {
           <tr key={item.id}>
             <td>{item.type}</td>
             <td>{item.amount}</td>
-            <td>{item.currency}</td>
+            <td>{item.currency.replace(/ /gi, ', ')}</td>
           </tr>
         ))}
       </tbody>
