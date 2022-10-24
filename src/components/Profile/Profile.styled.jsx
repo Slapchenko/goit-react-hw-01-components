@@ -35,7 +35,7 @@ export const ProfileTag = styled.p`
 
 export const ProfileLocation = styled.p``;
 
-export const ProfileStats = styled.p`
+export const ProfileStats = styled.ul`
   display: flex;
 `;
 
