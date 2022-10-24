@@ -1,37 +1,48 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css';
+import {
+  ProfileCard,
+  ProfileDescription,
+  ProfileAvatar,
+  ProfileName,
+  ProfileTag,
+  ProfileLocation,
+  ProfileStats,
+  ProfileStatsList,
+  ProfileStatsLabel,
+  ProfileStatsQuantity
+} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}>{username}</p>
-        <p className={css.tag}>@{tag}</p>
-        <p className={css.location}>{location}</p>
-      </div>
+    <ProfileCard>
+      <ProfileDescription>
+        <ProfileAvatar src={avatar} alt="User avatar" />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTag>@{tag}</ProfileTag>
+        <ProfileLocation>{location}</ProfileLocation>
+      </ProfileDescription>
 
-      <ul className={css.stats}>
-        <li className={css.list}>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>
+      <ProfileStats>
+        <ProfileStatsList>
+          <ProfileStatsLabel>Followers</ProfileStatsLabel>
+          <ProfileStatsQuantity>
             {new Intl.NumberFormat('en-En').format(stats.followers)}
-          </span>
-        </li>
-        <li className={css.list}>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>
+          </ProfileStatsQuantity>
+        </ProfileStatsList>
+        <ProfileStatsList>
+          <ProfileStatsLabel>Views</ProfileStatsLabel>
+          <ProfileStatsQuantity>
             {new Intl.NumberFormat('en-En').format(stats.views)}
-          </span>
-        </li>
-        <li className={css.list}>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>
+          </ProfileStatsQuantity>
+        </ProfileStatsList>
+        <ProfileStatsList>
+          <ProfileStatsLabel>Likes</ProfileStatsLabel>
+          <ProfileStatsQuantity>
             {new Intl.NumberFormat('en-En').format(stats.likes)}
-          </span>
-        </li>
-      </ul>
-    </div>
+          </ProfileStatsQuantity>
+        </ProfileStatsList>
+      </ProfileStats>
+    </ProfileCard>
   );
 };
 
