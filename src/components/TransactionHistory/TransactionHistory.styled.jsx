@@ -7,7 +7,7 @@ export const Table = styled.table`
 `;
 
 export const THead = styled.thead``;
-export const TBody = styled.thead``;
+export const TBody = styled.tbody``;
 
 export const TH = styled.th`
   border-top: 1px solid #777777;
