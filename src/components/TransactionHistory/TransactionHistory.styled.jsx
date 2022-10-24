@@ -55,6 +55,5 @@ export const TD = styled.td`
   border: 1px solid #e3eef7;
   padding: 10px 15px;
   position: relative;
-  transition: all 0.5s ease;
   color: black;
 `;
